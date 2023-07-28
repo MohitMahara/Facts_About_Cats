@@ -5,69 +5,68 @@ import axios from "axios";
 const app = express();
 const PORT = process.env.PORT || 8000;
 const date = new Date();
-let pageNo = 1;
+let pageNo = "";
+const factsPerPage = 5;
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send("Something went wrong!");
+});
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(express.static("public"));
 
-app.use(express.static('public'));
-
-
-app.get("/", async (req, res) => {
-
+app.get("/", async (req, res, next) => {
     try {
-           const response = await axios.get(`https://cat-fact.herokuapp.com/facts`);
-           const result = response.data;
+        const response = await axios.get(`https://cat-fact.herokuapp.com/facts`);
+        const result = response.data;
+        const factsToShow = result.slice(0, factsPerPage);
 
         res.render("index.ejs", {
             year: date.getFullYear(),
-            fact1 : result[0].text,
-            fact2 : result[1].text,
-            fact3 : result[2].text,
-            fact4 : result[3].text,
-            fact5 : result[4].text,
-        });
+            fact1: factsToShow[0].text,
+            fact2: factsToShow[1].text,
+            fact3: factsToShow[2].text,
+            fact4: factsToShow[3].text,
+            fact5: factsToShow[4].text,
+        })
 
-
-    } catch(error){
-       console.log(error);
-        }
+    } catch (error) {
+        next(error);
+    }
 });
 
-app.get("/nextPage",async (req, res) =>{
-
+app.get("/nextPage", async (req, res, next) => {
     try {
         pageNo += 1;
-        const response = await axios.get(`https://catfact.ninja/facts?page=${pageNo}`);
+        const response = await axios.get(
+            `https://catfact.ninja/facts?page=${pageNo}`
+        );
         const nextPageresult = response.data.data;
-        // console.log(nextPageresult);
+        const factsToShow = nextPageresult.slice(0, factsPerPage);
 
-     res.render("index.ejs", {
-         year: date.getFullYear(),
-         fact1 : nextPageresult[0].fact,
-         fact2 : nextPageresult[1].fact,
-         fact3 : nextPageresult[2].fact,
-         fact4 : nextPageresult[3].fact,
-         fact5 : nextPageresult[4].fact,
-     });
+        res.render("index.ejs", {
+            year: date.getFullYear(),
+            fact1: factsToShow[0].fact,
+            fact2: factsToShow[1].fact,
+            fact3: factsToShow[2].fact,
+            fact4: factsToShow[3].fact,
+            fact5: factsToShow[4].fact,
+        });
+    } catch (error) {
+        next(error);
+    }
+});
 
-
- } catch(error){
-    console.log(error);
-     }
-
-})
-
-
-app.get("/about", (req, res) =>{
+app.get("/about", (req, res) => {
     res.render("about.ejs", {
         year: date.getFullYear(),
     });
-})
-
+});
 
 app.listen(PORT, () => {
     console.log(`listening to the port ${PORT}`);
-})
+});
