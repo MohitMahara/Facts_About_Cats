@@ -7,9 +7,6 @@ const PORT = process.env.PORT || 8000;
 const date = new Date();
 let pageNo = 1;
 
-// const nextPage = document.getElementsByClassName("next");
-// const previousPage = document.getElementsByClassName("previous");
-
 
 app.use(bodyParser.urlencoded({
     extended: true
