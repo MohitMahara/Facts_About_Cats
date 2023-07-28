@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <%-include("partials/header.ejs") %>
+</head>
+
+<body>
+   <%-include("partials/navBar.ejs"); %>
+
+  <!-- header section -->
+  <section class="header-section">
+    <div class="header-text">
+      <h1>Know Some Interesting Facts About Cats</h1>
+    </div>
+  </section>
+
+
+  <!-- Main Sectiion -->
+
+  <main class="main-section">
+    <h2 class="main-heading">Here Are Some Facts About Cats </h2>
+    <div class="container">
+
+      <div class="fact-box">
+        <div class="left">
+          <img
+            src="https://images.unsplash.com/photo-1662393556034-9a1c5c9f2712?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+            alt="">
+        </div>
+
+        <div class="right">
+          <p><%= fact1 %></p>
+        </div>
+
+      </div>
+
+      <div class="fact-box">
+        <div class="left">
+          <img
+            src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0JTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+            alt="">
+        </div>
+
+        <div class="right">
+          <p><%= fact2 %></p>
+        </div>
+
+      </div>
+
+      <div class="fact-box">
+        <div class="left">
+          <img
+            src="https://images.unsplash.com/photo-1647244327607-fb767c75c83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdCUyMGltYWdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+            alt="">
+        </div>
+
+        <div class="right">
+          <p><%= fact3 %></p>
+        </div>
+
+      </div>
+
+
+      <div class="fact-box">
+        <div class="left">
+          <img
+            src="https://images.unsplash.com/photo-1642167981575-87b85986f145?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhdCUyMGltYWdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+            alt="">
+        </div>
+
+        <div class="right">
+          <p><%= fact4 %></p>
+        </div>
+
+      </div>
+
+
+      <div class="fact-box">
+        <div class="left">
+          <img
+            src="https://images.unsplash.com/photo-1675403790662-7796a119b3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhdCUyMGltYWdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+            alt="">
+        </div>
+
+        <div class="right">
+          <p><%= fact5 %></p>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <form class="buttons" method="get" action="/nextPage">
+       <a class="previous" href="/">Previous</a>
+       <a class="next" href="/nextPage">Next</a>
+    </form>
+  </main>
+   
+  <%-include("partials/footer.ejs") %>
+</body>
+
+</html>

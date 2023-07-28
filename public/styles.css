@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat:wght@400;500;700&family=Piazzolla:wght@200;400;900&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&family=Ysabeau+SC:wght@400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    padding: 0.7rem 1.5rem;
+    background-color: black !important;
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+    color: white;
+}
+
+.nav-item {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.navbar-toggler{
+    background-color: white;
+    padding: 2px 6px;
+    border: none;
+}
+
+/* header section */
+
+.header-section {
+    width: 100%;
+    height: 90vh;
+    background-image: url('https://images.unsplash.com/photo-1578588979923-639f39647d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+    background-image: url('https://images.unsplash.com/photo-1667193123644-0699d63eaa9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+    /* background-image: url('https://images.unsplash.com/photo-1653731838477-b2f640047891?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'); */
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+}
+
+.header-text {
+    background-color: rgb(5, 1, 1);
+    opacity: 0.6;
+    width: 60%;
+}
+
+
+.header-section .header-text h1 {
+    color: white;
+    font-size: 4.5rem;
+    font-family: 'Ysabeau SC', sans-serif;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+
+/* Main Content Section */
+
+.main-section {
+    min-height: 100vh;
+    width: 100%;
+
+}
+
+.main-section .main-heading{
+    width: 50%;
+    margin: auto;
+    margin-block: 40px;
+    text-align:  center;
+    font-family:'Ysabeau SC', sans-serif;
+    font-size: 3rem;
+}
+
+
+
+.main-section .container{
+    margin-block: 100px;
+    display: flex;
+    flex-direction: column;
+    /* height: 200vh; */
+    gap: 80px;
+}
+
+
+.fact-box {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fact-box .left {
+    width: 30%;
+    height: 100%;
+}
+
+.fact-box .left img{
+    width: 100%;
+    height: 100%;
+}
+
+.fact-box .right {
+    width: 60%;
+    overflow: auto;
+}
+
+.fact-box .right p{
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    font-family: "Montserrat",sans-serif;
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 50px;
+}
+
+.previous,
+.next{
+    padding: 10px 25px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin: 10px 15px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+
+/* about us */
+
+.about-us{
+    margin-block: 60px;
+}
+
+.about-us .content .about-us-left{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+}
+
+.about-us-left h1{
+   font-family:'Ysabeau SC', sans-serif;
+   font-size: 3rem;
+   margin-bottom: 20px;
+}
+
+.about-us-left p{
+    font-family: "Montserrat",sans-serif;
+    line-height: 2.2rem;
+    font-size: 1.1rem;
+}
+
+.hello-btn{
+    background-color: #213555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    width: 40%;
+    border: none;
+    margin-top: 40px;
+}
+
+
+/* footer  */
+
+footer {
+    margin-top: auto;
+    background-color: black;
+    color: white;
+    display: grid;
+    place-items: center;
+    height: 3rem;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width:1024px ) {
+    .header-text{
+        width: 85%;
+    }
+
+    .header-section .header-text h1{
+        font-size: 4rem;
+    }
+
+
+}
+
+@media screen and (max-width:768px ) {
+    .header-text{
+        width: 85%;
+    }
+
+    .header-section .header-text h1{
+        font-size: 3rem;
+    }
+
+    .main-section .main-heading {
+     width: 75%;
+     font-size: 2.5rem;
+
+    }
+
+    .fact-box .right p{
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+    .about-us .content{
+      flex-direction: column-reverse;
+    }
+     
+    .about-us-left,
+    .about-us-right{
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width:425px ) {
+    .navbar{
+        padding: 0.7rem 1rem;
+    }
+    
+    .header-text{
+        width: 95%;
+    }
+
+    .header-section .header-text h1{
+        font-size: 2rem;
+        padding-block: 20px;
+    }
+
+    .main-section .main-heading {
+     width: 75%;
+     font-size: 2rem;
+
+    }
+
+    .fact-box{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .fact-box .left, 
+    .fact-box .right{
+      width: 100%;
+    }
+
+
+
+    .fact-box .right p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+
+
+}

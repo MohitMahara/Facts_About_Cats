@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include("partials/header.ejs")  %>
+</head>
+<body>
+    <%-include("partials/navBar.ejs")  %>
+
+    <div class="container-fluid about-us">
+        <div class="row">
+            <div class="col-md-10  col-12 mx-auto">
+                <div class="row content">
+                    <!-- left side div -->
+                    <div class="col-md-6 col-12 about-us-left">
+                        <h1>About Us</h1>
+                        <p>"Hello, I'm Mohit Mahara, a passionate MERN stack developer. With a keen eye for detail and a
+                            strong drive for innovation, I bring ideas to life through elegant and efficient web
+                            applications. I thrive on solving complex problems, delivering high-quality code, and
+                            creating seamless user experiences. Let's build something amazing together!"</p>
+                        <button class="hello-btn">Say Hello</button>
+                    </div>
+
+                    <!-- right side div -->
+                    <div class="col-md-6 col-12 about-us-right">
+                        <img src="/about-us img.jpg" class="d-block w-100" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%-include("partials/footer.ejs")  %>
+</body>
+</html>
