@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import axios from "axios";
 
 const app = express();
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 const date = new Date();
 let pageNo = 1;
 
@@ -71,6 +71,6 @@ app.get("/about", (req, res) =>{
 })
 
 
-app.listen(port, () => {
-    console.log(`listening to the port ${port}`);
+app.listen(PORT, () => {
+    console.log(`listening to the port ${PORT}`);
 })
