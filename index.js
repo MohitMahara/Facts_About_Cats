@@ -5,7 +5,7 @@ import axios from "axios";
 const app = express();
 const PORT = process.env.PORT || 8000;
 const date = new Date();
-let pageNo = "";
+let pageNo = 1;
 const factsPerPage = 5;
 
 // Error handling middleware
@@ -47,6 +47,7 @@ app.get("/nextPage", async (req, res, next) => {
         );
         const nextPageresult = response.data.data;
         const factsToShow = nextPageresult.slice(0, factsPerPage);
+        console.log(pageNo);
 
         res.render("index.ejs", {
             year: date.getFullYear(),
