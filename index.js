@@ -14,6 +14,8 @@ app.use((err, req, res, next) => {
     res.status(500).send("Something went wrong!");
 });
 
+app.set("view engine", "ejs");
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -25,7 +27,7 @@ app.get("/", async (req, res, next) => {
         const result = response.data;
         const factsToShow = result.slice(0, factsPerPage);
 
-        res.render("index.ejs", {
+        res.render("index", {
             year: date.getFullYear(),
             fact1: factsToShow[0].text,
             fact2: factsToShow[1].text,
@@ -49,7 +51,7 @@ app.get("/nextPage", async (req, res, next) => {
         const factsToShow = nextPageresult.slice(0, factsPerPage);
         console.log(pageNo);
 
-        res.render("index.ejs", {
+        res.render("index", {
             year: date.getFullYear(),
             fact1: factsToShow[0].fact,
             fact2: factsToShow[1].fact,
@@ -63,7 +65,7 @@ app.get("/nextPage", async (req, res, next) => {
 });
 
 app.get("/about", (req, res) => {
-    res.render("about.ejs", {
+    res.render("about", {
         year: date.getFullYear(),
     });
 });
