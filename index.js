@@ -1,12 +1,14 @@
-import express from "express";
-import bodyParser from "body-parser";
-import axios from "axios";
-
+const express = require("express");
+const bodyParser = require("body-parser");
+const axios = require("axios");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const date = new Date();
 let pageNo = 1;
 const factsPerPage = 5;
+const viewsPath = path.join(__dirname, "/views");
+const publicPath = path.join(__dirname, "/public");
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -15,11 +17,12 @@ app.use((err, req, res, next) => {
 });
 
 app.set("view engine", "ejs");
+app.set('views', viewsPath);
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(express.static("public"));
+app.use(express.static(publicPath));
 
 app.get("/", async (req, res, next) => {
     try {
